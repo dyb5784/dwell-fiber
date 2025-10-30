@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "Dwell-Fiber: Formally-Verified Ransomware Defense"
+abstract: "A minimal, end-to-end prototype that turns the Network-Utility-Maximisation (NUM) fibre-bundle model of compiler passes into runnable eBPF/LLVM/K8s artefacts."
+type: software
+authors:
+  - family-names: "dyb5784"
+version: "2025"
+date-released: "2025-10-30"
+repository-code: "https://github.com/dyb5784/dwell-fiber"
+keywords:
+  - "compiler optimization"
+  - "formal verification"
+  - "ransomware defense"
+  - "ebpf"
+  - "kubernetes"
+references:
+  - type: article
+    title: "From Pass = NUM to Compiler = Fibered Functor"
+    authors:
+      - name: "Moonshot AI"
+    year: 2025
+    url: "https://github.com/dyb5784/dwell-fiber/blob/main/docs/memo-fibered-compiler-2025.pdf"
