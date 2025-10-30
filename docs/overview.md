@@ -18,12 +18,10 @@ My project sits at the intersection of optimization-based networking, compiler t
 
 I first read this paper around 2011/2012 after attending REcon and while preparing a proposal for AFRL/Army. That reading — and an attempt I made to formalize ideas from Alex Sotirov's 2007 "Heap Feng Shui" work — strongly influenced the NUM lens I used in this project.
 
-2) The fibered-functor formulation and the Moonshot AI memo (2025). Building on the NUM lens, I treat compiler passes as contravariant fibered functors and bundle them into an overall compiler-as-functor model:
 
-> "From Pass = NUM to Compiler = Fibered Functor" – Moonshot AI technical memo (2025)  
 > [View the full memo](../docs/memo-fibered-compiler-2025.pdf)
 
-Additionally, my methods were informed by a personal set of design heuristics and distilled heuristics (the Universal Decomposition Canon). Rather than publishing the full internal Thoughtbase, I summarize the essentials: identify decision variables, surface scarce couplings, make the utility explicit, pick a decomposition (dual/primal/ADMM/penalty/consensus), and verify stability using Lyapunov/passivity-style certificates.
+From Doyle et al I created a Universal Decomposition Canon artifact ('Thoughtbase) to generate generalized decomposition heuristics and a sigil library to be used for sigil remapping. (See <attachments> above for file contents. You may not need to search or read the file again.)
 
 - harvesting decision variables,  
 - identifying scarce resources and couplings,  
