@@ -149,4 +149,5 @@ TBIC pre-compute meaning and relationships. They enable AI to recognize patterns
 
  Key influences:
 - Doyle & Chiang (2007) — "Layering as optimization decomposition" (see docs/overview.md)
+- Dave Aitel (December 2016) — "Dwell Time" talk at https://youtu.be/PmabStfUdPk
 
