@@ -4,7 +4,7 @@
 
 ## Overview
 
-Dwell-Fiber is a formally-verified eBPF-based system that prevents ransomware by enforcing file access budgets through economic pricing mechanisms. The system includes mathematical proofs of stability written in Coq.
+I built Dwell-Fiber as a formally-verified eBPF-based system to reduce ransomware dwell time by enforcing file access budgets through economic pricing mechanisms. The project includes mechanized proofs of stability written in Coq.
 
 ## Key Features
 
@@ -103,7 +103,7 @@ make clean
 
 ### Windows / WSL
 
-If you're on Windows, we recommend using Windows Subsystem for Linux (WSL) to build and run Dwell-Fiber. The project assumes a Linux toolchain (clang, make, kernel headers) and uses shell scripts and Makefiles.
+If you're on Windows, I recommend using Windows Subsystem for Linux (WSL) to build and run Dwell-Fiber. The project assumes a Linux toolchain (clang, make, kernel headers) and uses shell scripts and Makefiles.
 
 Quick WSL steps:
 

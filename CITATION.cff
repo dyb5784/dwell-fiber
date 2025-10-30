@@ -21,3 +21,17 @@ references:
       - name: "Moonshot AI"
     year: 2025
     url: "https://github.com/dyb5784/dwell-fiber/blob/main/docs/memo-fibered-compiler-2025.pdf"
+  - type: article
+    title: "Layering as optimization decomposition: A mathematical theory of network architectures"
+    authors:
+      - name: "Chiang, M."
+      - name: "Low, S. H."
+      - name: "Calderbank, A. R."
+      - name: "Doyle, J. C."
+    year: 2007
+    journal: "Proceedings of the IEEE"
+    volume: 95
+    number: 1
+    pages: "255-312"
+    doi: "10.1109/JPROC.2006.887322"
+    url: "https://doi.org/10.1109/JPROC.2006.887322"
