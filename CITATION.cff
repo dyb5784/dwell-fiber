@@ -5,7 +5,7 @@ abstract: "A minimal, end-to-end prototype that turns the Network-Utility-Maximi
 type: software
 authors:
   - family-names: "dyb5784"
-version: "2025"
+version: "v0.1.0-alpha.1"
 date-released: "2025-10-30"
 repository-code: "https://github.com/dyb5784/dwell-fiber"
 keywords:
@@ -15,12 +15,6 @@ keywords:
   - "ebpf"
   - "kubernetes"
 references:
-  - type: article
-    title: "From Pass = NUM to Compiler = Fibered Functor"
-    authors:
-      - name: "Moonshot AI"
-    year: 2025
-    url: "https://github.com/dyb5784/dwell-fiber/blob/main/docs/memo-fibered-compiler-2025.pdf"
   - type: article
     title: "Layering as optimization decomposition: A mathematical theory of network architectures"
     authors:
