@@ -140,4 +140,9 @@ If you use Dwell-Fiber in research, please cite:
 
 ## Acknowledgments
 
-Based on ADMM optimization theory and formal verification principles.
+This project draws on optimization-decomposition ideas for network architectures (notably Doyle & Chiang, 2007) and the broader NUM literature, and integrates them with formal verification techniques. The Universal Decomposition Canon (a personal thoughtbase of distilled insight clusters) influenced the project's decomposition heuristics and sigil library used for sigil remapping.
+
+Key influences:
+- Doyle & Chiang (2007) — "Layering as optimization decomposition" (see docs/overview.md)
+- Kelly, Maulloo & Tan (1998) — NUM foundations
+- Moonshot AI memo (2025) — Compiler = Fibered Functor
