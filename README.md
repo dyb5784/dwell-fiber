@@ -16,7 +16,7 @@ Dwell-Fiber is a formally-verified eBPF-based system that prevents ransomware by
 
 ## Architecture
 
-\\\
+```
 ┌─────────────┐
 │   eBPF      │  Monitor file dwell times
 │  Kernel     │  (per-process tracking)
@@ -36,35 +36,35 @@ Dwell-Fiber is a formally-verified eBPF-based system that prevents ransomware by
 
         Proven Stable
            (Coq)
-\\\
+```
 
 ## Quick Start
 
 ### Prerequisites (Ubuntu 24.04)
 
-\\\ash
+```bash
 # Fix asm/types.h symlink issue (critical!)
 sudo ln -sf /usr/include/x86_64-linux-gnu/asm /usr/include/asm
 
 # Install dependencies
 sudo apt-get update
-sudo apt-get install -y \\
-    clang llvm libbpf-dev linux-headers-\ \\
+sudo apt-get install -y \
+    clang llvm libbpf-dev linux-headers-$(uname -r) \
     golang-go coq make
-\\\
+```
 
 ### Build
 
-\\\ash
+```bash
 make all          # Build everything
-make verify       # Verify Coq proofs (180ms)
-\\\
+make verify       # Verify Coq proofs (may take a short while)
+```
 
 ### Run
 
-\\\ash
+```bash
 sudo ./bin/dwell-fiber-daemon --alpha=0.5 --budget=5.0
-\\\
+```
 
 ## Mathematical Guarantees
 
@@ -78,7 +78,7 @@ See [docs/stability-proof.md](docs/stability-proof.md) for details.
 
 ## Repository Structure
 
-\\\
+```
 dwell-fiber/
 ├── bpf/              # eBPF programs (C)
 ├── coq/              # Formal proofs
@@ -86,20 +86,40 @@ dwell-fiber/
 ├── pkg/              # Reusable packages
 ├── scripts/          # Helper scripts
 └── test/             # Tests
-\\\
+```
 
 ## Development
 
-\\\ash
+```bash
 # Run tests
 make test
 
-# CI verification (runs in <1 second)
+# CI verification (fast)
 make ci
 
 # Clean build artifacts
 make clean
-\\\
+```
+
+### Windows / WSL
+
+If you're on Windows, we recommend using Windows Subsystem for Linux (WSL) to build and run Dwell-Fiber. The project assumes a Linux toolchain (clang, make, kernel headers) and uses shell scripts and Makefiles.
+
+Quick WSL steps:
+
+```powershell
+# Install WSL and Ubuntu (if not already installed)
+wsl --install -d ubuntu:24.04
+
+# In WSL (Ubuntu) shell, clone and build
+git clone https://github.com/dyb5784/dwell-fiber.git
+cd dwell-fiber
+chmod +x scripts/fix-asm-symlink.sh
+./scripts/fix-asm-symlink.sh
+make all
+```
+
+If you prefer to stay in PowerShell, open a WSL shell using `wsl` and run the Linux commands there.
 
 ## License
 
@@ -109,14 +129,14 @@ MIT License - See [LICENSE](LICENSE)
 
 If you use Dwell-Fiber in research, please cite:
 
-\\\ibtex
+```bibtex
 @software{dwell_fiber_2025,
   title = {Dwell-Fiber: Formally-Verified Ransomware Defense},
-  author = {dyb5784},
+  author = {Daniyel Yaacov Bilar},
   year = {2025},
   url = {https://github.com/dyb5784/dwell-fiber}
 }
-\\\
+```
 
 ## Acknowledgments
 
