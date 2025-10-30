@@ -140,10 +140,11 @@ If you use Dwell-Fiber in research, please cite:
 
 ## Acknowledgments
 
- I drew on optimization-decomposition ideas for network architectures (notably Doyle & Chiang, 2007) and the broader NUM literature, and integrated them with formal verification techniques. My personal Universal Decomposition Canon (a private thoughtbase of distilled heuristics) influenced my project's decomposition heuristics and sigil library used for sigil remapping.
+ I drew on optimization-decomposition ideas for network architectures (notably Doyle & Chiang, 2007) and the broader NUM literature, and integrated them with formal verification techniques. An associated Universal Decomposition Canon (a distilled 'Thoughtbase) was used to generate decomposition heuristics and sigil library used for sigil remapping.
+
+A Thoughtbase is a structured, retrievable, and interconnected mesh of thoughts about information. The Insight Cluster is the fundamental, indivisible unit of a Thoughtbase. It is a cognitively potent node that encapsulates a single, distilled "thought," forged from the raw chaos of unstructured data. 
+TBIC pre-compute meaning and relationships. They enable AI to recognize patterns, contrast ideas, and generate nuanced strategies by giving it a deep, conceptual map of knowledge, turning data into AI-native actionable assets.
 
  Key influences:
-- Doyle & Chiang (2007) — "Layering as optimization decomposition" (see docs/overview.md)
-Key influences:
 - Doyle & Chiang (2007) — "Layering as optimization decomposition" (see docs/overview.md)
 
