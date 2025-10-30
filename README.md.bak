@@ -16,7 +16,7 @@ Dwell-Fiber is a formally-verified eBPF-based system that prevents ransomware by
 
 ## Architecture
 
-```
+\\\
 ┌─────────────┐
 │   eBPF      │  Monitor file dwell times
 │  Kernel     │  (per-process tracking)
@@ -36,35 +36,35 @@ Dwell-Fiber is a formally-verified eBPF-based system that prevents ransomware by
 
         Proven Stable
            (Coq)
-```
+\\\
 
 ## Quick Start
 
 ### Prerequisites (Ubuntu 24.04)
 
-```bash
+\\\ash
 # Fix asm/types.h symlink issue (critical!)
 sudo ln -sf /usr/include/x86_64-linux-gnu/asm /usr/include/asm
 
 # Install dependencies
 sudo apt-get update
-sudo apt-get install -y \
-    clang llvm libbpf-dev linux-headers-$(uname -r) \
+sudo apt-get install -y \\
+    clang llvm libbpf-dev linux-headers-\ \\
     golang-go coq make
-```
+\\\
 
 ### Build
 
-```bash
+\\\ash
 make all          # Build everything
-make verify       # Verify Coq proofs (may take a short while)
-```
+make verify       # Verify Coq proofs (180ms)
+\\\
 
 ### Run
 
-```bash
+\\\ash
 sudo ./bin/dwell-fiber-daemon --alpha=0.5 --budget=5.0
-```
+\\\
 
 ## Mathematical Guarantees
 
@@ -78,7 +78,7 @@ See [docs/stability-proof.md](docs/stability-proof.md) for details.
 
 ## Repository Structure
 
-```
+\\\
 dwell-fiber/
 ├── bpf/              # eBPF programs (C)
 ├── coq/              # Formal proofs
@@ -86,20 +86,20 @@ dwell-fiber/
 ├── pkg/              # Reusable packages
 ├── scripts/          # Helper scripts
 └── test/             # Tests
-```
+\\\
 
 ## Development
 
-```bash
+\\\ash
 # Run tests
 make test
 
-# CI verification (fast)
+# CI verification (runs in <1 second)
 make ci
 
 # Clean build artifacts
 make clean
-```
+\\\
 
 ## License
 
@@ -109,14 +109,14 @@ MIT License - See [LICENSE](LICENSE)
 
 If you use Dwell-Fiber in research, please cite:
 
-```bibtex
+\\\ibtex
 @software{dwell_fiber_2025,
   title = {Dwell-Fiber: Formally-Verified Ransomware Defense},
-  author = {Daniyel Yaacov Bilar},
+  author = {dyb5784},
   year = {2025},
   url = {https://github.com/dyb5784/dwell-fiber}
 }
-```
+\\\
 
 ## Acknowledgments
 
