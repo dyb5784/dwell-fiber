@@ -60,6 +60,8 @@ make all          # Build everything
 make verify       # Verify Coq proofs (may take a short while)
 ```
 
+Note: this repository is an early pre-release (alpha). The code has not yet been tested on Linux by the author — please run the Quick Start in a WSL or VirtualBox/Ubuntu VM and follow `TESTING.md` before relying on behavior in production.
+
 ### Run
 
 ```bash
