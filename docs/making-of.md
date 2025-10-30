@@ -2,7 +2,7 @@
 
 ## Project Genesis
 
-Dwell-Fiber started as a practical demonstration of the **fibered-functor compiler framework**, showing how Network-Utility-Maximisation (NUM) principles could be applied to system resource management. The project proves that compiler passes can be viewed as contravariant functors over resource budgets, with strong theoretical guarantees.
+I started Dwell-Fiber as a practical demonstration of the **fibered-functor compiler framework**, showing how I could apply Network-Utility-Maximisation (NUM) principles to system resource management. The project shows how compiler passes can be viewed as contravariant functors over resource budgets, with strong theoretical guarantees.
 
 ## Core Design: The 300-Line Heart
 
@@ -96,3 +96,15 @@ See [troubleshooting.md](troubleshooting.md) for more details.
 ## Contributing
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines and best practices.
+
+## UDC essentials (summary)
+
+I distilled a set of domain-neutral heuristics (the Universal Decomposition Canon) that guided decomposition choices during design. I do not publish the internal Thoughtbase here; instead the essential recipe I used is:
+
+- Identify the decision variables that are being tuned.
+- Identify the scarce resources and coupling constraints that bind the variables.
+- Make the implicit objective/utility explicit (and where possible, convexify it).
+- Choose a decomposition strategy (dual/primal/ADMM/penalty/consensus) guided by communication cost and observability.
+- Produce a simple stability certificate (Lyapunov, contraction or passivity style) for the chosen iterative updates.
+
+This short recipe is intentionally high-level — it captures the engineering moves without exposing the private Thoughtbase representations.

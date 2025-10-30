@@ -140,9 +140,10 @@ If you use Dwell-Fiber in research, please cite:
 
 ## Acknowledgments
 
-This project draws on optimization-decomposition ideas for network architectures (notably Doyle & Chiang, 2007) and the broader NUM literature, and integrates them with formal verification techniques. The Universal Decomposition Canon (a personal thoughtbase of distilled insight clusters) influenced the project's decomposition heuristics and sigil library used for sigil remapping.
+ I drew on optimization-decomposition ideas for network architectures (notably Doyle & Chiang, 2007) and the broader NUM literature, and integrated them with formal verification techniques. My personal Universal Decomposition Canon (a private thoughtbase of distilled heuristics) influenced the project's decomposition heuristics and sigil library used for sigil remapping.
 
+ Key influences:
+- Doyle & Chiang (2007) — "Layering as optimization decomposition" (see docs/overview.md)
 Key influences:
 - Doyle & Chiang (2007) — "Layering as optimization decomposition" (see docs/overview.md)
-- Kelly, Maulloo & Tan (1998) — NUM foundations
-- Moonshot AI memo (2025) — Compiler = Fibered Functor
+
