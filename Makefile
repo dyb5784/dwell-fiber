@@ -31,3 +31,4 @@ clean:
 	@\ -C coq clean
 	@rm -rf bin/
 	@cd daemon && go clean
+

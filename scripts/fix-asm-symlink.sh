@@ -25,3 +25,4 @@ echo "✓ Symlink created successfully"
 ls -la /usr/include/asm
 echo ""
 echo "You can now compile BPF programs."
+
