@@ -50,17 +50,11 @@ over the base category of resource budgets ℝ≥0ᵏ, and that strong duality /
 | Layer | Artefact | Function |
 |---|---|---|
 | **eBPF kernel** | `dwell_kern.c` | Per-task taint clock; kills process when `dwell > budget`; exports `price_dwell` map. |
-| **Userspace daemon** | `dwell_user.go` | ADMM dual ascent: `π ← [π + α(dwell – r)]⁺`; 800 ns per syscall on i7-1260P. |
+| **Userspace daemon** | `dwell_user.go` | ADMM dual ascent: `π ← [π + α(dwell – r)]⁺`;  |
 | **LLVM pass** | `lib/DwellPass.cpp` | Instruments IR with `dwell_update()`; same price variable linked at run-time. |
 | **K8s autoscaler** | `config/hpa.yaml` | Custom metric `dwell_seconds_current`; scales pods to keep average ≤ 5 s. |
-| **Stability proof** | `proofs/dwell_stable.v` | Coq lemma: chordal dependence graph ⇒ bounded Lyapunov drift; 180 ms check. |
+| **Stability proof** | `proofs/dwell_stable.v` | Coq lemma: chordal dependence graph ⇒ bounded Lyapunov drift;  |
 
 For detailed architecture information and component interactions, see [architecture.md](architecture.md).
 
-## Performance Characteristics
 
-- Syscall overhead: 800 ns per call (i7-1260P)
-- Coq proof verification: 180 ms
-- K8s autoscaling response: sub-second
-
-For detailed performance analysis and reproduction steps, see [performance.md](performance.md).
