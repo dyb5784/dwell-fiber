@@ -4,9 +4,11 @@ title: "Dwell-Fiber: Formally-Verified Ransomware Defense"
 abstract: "A minimal, end-to-end prototype that turns the Network-Utility-Maximisation (NUM) fibre-bundle model of compiler passes into runnable eBPF/LLVM/K8s artefacts."
 type: software
 authors:
-  - family-names: "dyb5784"
+  - family-names: "Bilar"
+    given-names: "Daniyel Yaacov"
 version: "v0.1.0-alpha.1"
 date-released: "2025-10-30"
+notes: "Code has not yet been tested on Linux by the author as of 2025-10-30. Follow the Quick Start instructions (WSL or VirtualBox/Ubuntu) in README.md to build and test before use."
 repository-code: "https://github.com/dyb5784/dwell-fiber"
 keywords:
   - "compiler optimization"
