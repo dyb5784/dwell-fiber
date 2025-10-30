@@ -1,0 +1,45 @@
+# Binaries
+bin/
+*.o
+*.vo
+*.vok
+*.vos
+*.glob
+.*.aux
+
+# BPF
+*.bpf.o
+*.skel.h
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+vendor/
+
+# Build artifacts
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test artifacts
+coverage.out
+*.prof

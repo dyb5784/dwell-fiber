@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify-proofs:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Coq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y coq
+      
+      - name: Verify stability proofs
+        run: make verify
+        timeout-minutes: 1
+      
+      - name: Check proof certificate
+        run: coqchk -silent -R coq DwellFiber dwell_stable
+
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21'
+      
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang llvm libbpf-dev linux-headers-\
+          sudo ln -sf /usr/include/x86_64-linux-gnu/asm /usr/include/asm
+      
+      - name: Build all
+        run: make all
+      
+      - name: Run tests
+        run: make test
+
+  security:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run security scan
+        uses: securego/gosec@master
+        with:
+          args: './...'
