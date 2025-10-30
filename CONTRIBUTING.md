@@ -88,4 +88,4 @@ make bench
 
 ## Code of Conduct
 
-Please follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+Please follow my [Code of Conduct](CODE_OF_CONDUCT.md).

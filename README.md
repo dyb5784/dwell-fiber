@@ -4,7 +4,7 @@
 
 ## Overview
 
-I built Dwell-Fiber as a formally-verified eBPF-based system to reduce ransomware dwell time by enforcing file access budgets through economic pricing mechanisms. The project includes mechanized proofs of stability written in Coq.
+I built Dwell-Fiber as a formally-verified eBPF-based system to reduce ransomware dwell time by enforcing file access budgets through economic pricing mechanisms. I included mechanized proofs of stability written in Coq.
 
 ## Key Features
 
@@ -103,7 +103,7 @@ make clean
 
 ### Windows / WSL
 
-If you're on Windows, I recommend using Windows Subsystem for Linux (WSL) to build and run Dwell-Fiber. The project assumes a Linux toolchain (clang, make, kernel headers) and uses shell scripts and Makefiles.
+If you're on Windows, I recommend using Windows Subsystem for Linux (WSL) to build and run Dwell-Fiber. My project assumes a Linux toolchain (clang, make, kernel headers) and uses shell scripts and Makefiles.
 
 Quick WSL steps:
 
@@ -140,7 +140,7 @@ If you use Dwell-Fiber in research, please cite:
 
 ## Acknowledgments
 
- I drew on optimization-decomposition ideas for network architectures (notably Doyle & Chiang, 2007) and the broader NUM literature, and integrated them with formal verification techniques. My personal Universal Decomposition Canon (a private thoughtbase of distilled heuristics) influenced the project's decomposition heuristics and sigil library used for sigil remapping.
+ I drew on optimization-decomposition ideas for network architectures (notably Doyle & Chiang, 2007) and the broader NUM literature, and integrated them with formal verification techniques. My personal Universal Decomposition Canon (a private thoughtbase of distilled heuristics) influenced my project's decomposition heuristics and sigil library used for sigil remapping.
 
  Key influences:
 - Doyle & Chiang (2007) — "Layering as optimization decomposition" (see docs/overview.md)

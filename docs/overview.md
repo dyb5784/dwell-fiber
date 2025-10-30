@@ -9,21 +9,21 @@ The same 300-line core—instantiated through **sigil remapping**—has already 
 over the base category of **resource budgets** ℝ≥0ᵏ.
 ## Academic Lineage
 
-This project sits at the intersection of optimization-based networking, compiler theory and formal verification. Two strands deserve explicit acknowledgement:
+My project sits at the intersection of optimization-based networking, compiler theory and formal verification. Two strands deserve explicit acknowledgement:
 
 
 1) Classical optimization-decomposition for network architectures. A foundational reference is:
 
 > Chiang, M., Low, S. H., Calderbank, A. R., & Doyle, J. C., "Layering as optimization decomposition: A mathematical theory of network architectures" (2007). See: https://doi.org/10.1109/JPROC.2006.887322
 
-I first read this paper around 2011/2012 after attending REcon and while preparing a proposal for AFRL/Army. That reading — and an attempt I made to formalize ideas from Alex Sotirov's 2007 "Heap Feng Shui" work — strongly influenced the NUM lens used in this project.
+I first read this paper around 2011/2012 after attending REcon and while preparing a proposal for AFRL/Army. That reading — and an attempt I made to formalize ideas from Alex Sotirov's 2007 "Heap Feng Shui" work — strongly influenced the NUM lens I used in this project.
 
 2) The fibered-functor formulation and the Moonshot AI memo (2025). Building on the NUM lens, I treat compiler passes as contravariant fibered functors and bundle them into an overall compiler-as-functor model:
 
 > "From Pass = NUM to Compiler = Fibered Functor" – Moonshot AI technical memo (2025)  
 > [View the full memo](../docs/memo-fibered-compiler-2025.pdf)
 
-Additionally, the project's methods were informed by a personal set of design heuristics and distilled heuristics (the Universal Decomposition Canon). Rather than publishing the full internal Thoughtbase, I summarize the essentials: identify decision variables, surface scarce couplings, make the utility explicit, pick a decomposition (dual/primal/ADMM/penalty/consensus), and verify stability using Lyapunov/passivity-style certificates.
+Additionally, my methods were informed by a personal set of design heuristics and distilled heuristics (the Universal Decomposition Canon). Rather than publishing the full internal Thoughtbase, I summarize the essentials: identify decision variables, surface scarce couplings, make the utility explicit, pick a decomposition (dual/primal/ADMM/penalty/consensus), and verify stability using Lyapunov/passivity-style certificates.
 
 - harvesting decision variables,  
 - identifying scarce resources and couplings,  

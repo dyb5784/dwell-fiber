@@ -8,7 +8,7 @@ I started Dwell-Fiber as a practical demonstration of the **fibered-functor comp
 
 The system's core is a compact 300-line implementation that demonstrates the "same math, different fibre" principle. Through **sigil remapping**, this core has been successfully adapted to various resource management scenarios:
 
-1. Ransomware dwell-time control (this repo's primary focus)
+1. Ransomware dwell-time control (my repo's primary focus)
 2. ATP-budgeted metabolic edits in biological systems
 3. Cache-constrained thread placement in HPC environments
 
