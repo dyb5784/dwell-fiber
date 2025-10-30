@@ -101,6 +101,26 @@ make ci
 make clean
 ```
 
+### Windows / WSL
+
+If you're on Windows, we recommend using Windows Subsystem for Linux (WSL) to build and run Dwell-Fiber. The project assumes a Linux toolchain (clang, make, kernel headers) and uses shell scripts and Makefiles.
+
+Quick WSL steps:
+
+```powershell
+# Install WSL and Ubuntu (if not already installed)
+wsl --install -d ubuntu:24.04
+
+# In WSL (Ubuntu) shell, clone and build
+git clone https://github.com/dyb5784/dwell-fiber.git
+cd dwell-fiber
+chmod +x scripts/fix-asm-symlink.sh
+./scripts/fix-asm-symlink.sh
+make all
+```
+
+If you prefer to stay in PowerShell, open a WSL shell using `wsl` and run the Linux commands there.
+
 ## License
 
 MIT License - See [LICENSE](LICENSE)
