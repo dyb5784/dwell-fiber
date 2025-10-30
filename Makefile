@@ -4,7 +4,7 @@ all: bpf daemon coq
 
 bpf:
 	@echo "Building eBPF programs..."
-	@\ -C bpf
+	@$(MAKE) -C bpf
 
 daemon: bpf
 	@echo "Building Go daemon..."
@@ -12,7 +12,7 @@ daemon: bpf
 
 coq:
 	@echo "Compiling Coq proofs..."
-	@\ -C coq
+	@$(MAKE) -C coq
 
 verify: coq
 	@echo "Verifying proofs..."
@@ -27,8 +27,8 @@ ci: verify test
 	@echo "✓ All CI checks passed"
 
 clean:
-	@\ -C bpf clean
-	@\ -C coq clean
+	@$(MAKE) -C bpf clean
+	@$(MAKE) -C coq clean
 	@rm -rf bin/
 	@cd daemon && go clean
 

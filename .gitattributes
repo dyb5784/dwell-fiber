@@ -1,3 +1,13 @@
+# Normalize line endings across OSes
+* text=auto
+*.sh text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+Makefile text eol=lf
+*.go text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.tex text eol=lf
 # Normalize line endings
 * text=auto
 *.sh text eol=lf
