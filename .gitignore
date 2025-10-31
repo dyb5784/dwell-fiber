@@ -1,0 +1,41 @@
+# Binaries
+bin/
+*.o
+*.bpf.o
+*.exe
+
+# Coq compiled files
+*.vo
+*.vok
+*.vos
+*.glob
+.*.aux
+.*.cache
+
+# Go
+*.test
+*.out
+go.work
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Backups
+*.bak
+*.orig
+
+# Build artifacts
+build/
+dist/
