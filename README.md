@@ -134,7 +134,7 @@ If you use Dwell-Fiber in research, please cite:
 ```bibtex
 @software{dwell_fiber_2025,
   title = {Dwell-Fiber: Formally-Verified Ransomware Defense},
-  author = {Daniyel Yaacov Bilar},
+  author = {dyb},
   year = {2025},
   url = {https://github.com/dyb5784/dwell-fiber}
 }
