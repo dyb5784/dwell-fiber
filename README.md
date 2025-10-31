@@ -17,25 +17,38 @@ I built Dwell-Fiber as a formally-verified eBPF-based system to reduce ransomwar
 ## Architecture
 
 ```
-┌─────────────┐
-│   eBPF      │  Monitor file dwell times
-│  Kernel     │  (per-process tracking)
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  Daemon     │  Price updates (ADMM)
-│  (Go)       │  α = 0.5, budget = 5s
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ Enforcement │  Throttle/kill processes
-│   Engine    │  when dwell > budget
-└─────────────┘
 
-        Proven Stable
-           (Coq)
+┌─────────────────────────────────────────┐
+│         Kernel Space (eBPF)             │
+│  ┌───────────────────────────────────┐  │
+│  │  dwell_monitor.bpf.o              │  │
+│  │  • Track sys_openat               │  │
+│  │  • Track sys_close                │  │
+│  │  • Measure dwell time             │  │
+│  │  • Emit events to ring buffer     │  │
+│  └───────────────────────────────────┘  │
+└──────────────┬──────────────────────────┘
+               │ Ring Buffer Events
+               ▼
+┌─────────────────────────────────────────┐
+│        User Space (Go Daemon)           │
+│  ┌───────────────────────────────────┐  │
+│  │  ADMM Controller                  │  │
+│  │  price(t+1) = max(0,              │  │
+│  │    price(t) + α×(dwell - budget)) │  │
+│  │                                   │  │
+│  │  • α = 0.5 (step size)            │  │
+│  │  • budget = 5 seconds             │  │
+│  └───────────────────────────────────┘  │
+│                                         │
+│  ┌───────────────────────────────────┐  │
+│  │  Enforcement Engine               │  │
+│  │  • Throttle high-price processes  │  │
+│  │  • Kill if price critical         │  │
+│  └───────────────────────────────────┘  │
+└─────────────────────────────────────────┘
+            │
+            ▼ Proven Stable (Coq)
 ```
 
 ## Quick Start
