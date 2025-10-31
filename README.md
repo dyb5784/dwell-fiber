@@ -276,10 +276,10 @@ MIT License - See [LICENSE](LICENSE) file
 If you use Dwell-Fiber in research, please cite:
 
 ```bibtex
-@software{dwell_fiber_2024,
+@software{dwell_fiber_2025,
   title = {Dwell-Fiber: Formally-Verified Ransomware Defense},
-  author = {dyb5784},
-  year = {2024},
+  author = {dyb},
+  year = {2025},
   url = {https://github.com/dyb5784/dwell-fiber}
 }
 ```
@@ -300,5 +300,5 @@ If you use Dwell-Fiber in research, please cite:
 ---
 
 **Status:** Active Development  
-**Last Updated:** October 31, 2024  
+**Last Updated:** October 31, 2025  
 **Maintainer:** [@dyb5784](https://github.com/dyb5784)
