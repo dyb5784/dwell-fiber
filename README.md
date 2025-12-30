@@ -1,4 +1,7 @@
-# 🛡️ Dwell-Fiber
+# 🛡️ Dwell-Fiber - V3.0 WIP Architecture (Development Branch)
+
+> **⚠️ NOTICE**: This branch contains experimental V3.0 WIP-based architecture materials.
+> For stable, production-ready V1.4.0 (V2.x) code, see the `main` branch.
 
 **Ransomware Defense Through Proven-Stable Economic Enforcement**
 

@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(git add:*)",
+      "Bash(code --list-files)",
+      "Bash(ls:*)",
+      "Bash(coqc:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(make clean:*)",
+      "Bash(make verify:*)",
+      "Bash(\"/c/Coq-Platform~8.19~2024.10/bin/coqc\" --version)",
+      "Bash(\"/c/Coq-Platform~8.19~2024.10/bin/coqc\" -R . DwellFiber dwell_stable.v)",
+      "Bash(\"/c/Coq-Platform~8.19~2024.10/bin/coqc\" -R . DwellFiber dwell_extended.v)",
+      "Bash(\"/c/Coq-Platform~8.19~2024.10/bin/coqc\" -R . DwellFiber dwell_kernel_resilience.v)",
+      "Bash(git -C \"C:\\\\Users\\\\danie\\\\dwell-fiber\" log --oneline --all --graph -20)",
+      "Bash(git -C \"C:\\\\Users\\\\danie\\\\dwell-fiber\" ls-files --others --exclude-standard)",
+      "Bash(grep:*)",
+      "Bash(git -C \"C:\\\\Users\\\\danie\\\\dwell-fiber\" diff --stat main HEAD)",
+      "Bash(git -C /c/Users/danie/dwell-fiber log --oneline --all --graph -10)",
+      "Bash(wc:*)"
+    ]
+  }
+}
