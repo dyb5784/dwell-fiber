@@ -12,8 +12,36 @@ param(
     [string]$ConfigPath = "$env:APPDATA\Claude\claude_desktop_config.json"
 )
 
-Write-Host "MCP Setup Verification for Dwell-Fiber"
-Write-Host "======================================"
+# Enhanced PowerShell detection
+$script:PowerShellCmd = ""
+function Get-PowerShellCommand {
+    if ($script:PowerShellCmd) { return $script:PowerShellCmd }
+    
+    # Check for PowerShell 7+ first
+    $pwsh = Get-Command pwsh -ErrorAction SilentlyContinue
+    if ($pwsh) {
+        $script:PowerShellCmd = $pwsh.Source
+        return $script:PowerShellCmd
+    }
+    
+    # Fall back to Windows PowerShell 5.1
+    $powershell = Get-Command powershell -ErrorAction SilentlyContinue
+    if ($powershell) {
+        $script:PowerShellCmd = $powershell.Source
+        return $script:PowerShellCmd
+    }
+    
+    throw "No PowerShell installation found. Please install PowerShell 7+ or Windows PowerShell 5.1."
+}
+
+$PowerShellExec = Get-PowerShellCommand
+$PowerShellName = Split-Path $PowerShellExec -Leaf
+
+Write-Host "MCP Setup Verification for Dwell-Fiber" -ForegroundColor Cyan
+Write-Host "======================================" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "Using PowerShell: $PowerShellExec ($PowerShellName)" -ForegroundColor Gray
+Write-Host "Configuration: $ConfigPath" -ForegroundColor Gray
 Write-Host ""
 
 # Check configuration file
@@ -78,6 +106,12 @@ if ($bpftrace) {
 } else {
     Write-Host "   ⚠ bpftrace not found - Optional, for eBPF debugging only" -ForegroundColor Yellow
 }
+
+if ($PowerShellName -eq "pwsh") {
+    Write-Host "   ✓ PowerShell 7+ detected" -ForegroundColor Green
+} else {
+    Write-Host "   ⚠ Using Windows PowerShell 5.1 (functional but older)" -ForegroundColor Yellow
+}
 Write-Host ""
 
 # Check eBPF program
@@ -101,43 +135,60 @@ Write-Host ""
 
 # Summary
 Write-Host "4. Summary:" -ForegroundColor Cyan
-$green = [System.ConsoleColor]::Green
-$yellow = [System.ConsoleColor]::Yellow
-$red = [System.ConsoleColor]::Red
 
-Write-Host ""
+Write-Host "   PowerShell: " -NoNewline
+if ($PowerShellName -eq "pwsh") {
+    Write-Host "✓ PowerShell 7+" -ForegroundColor Green
+} else {
+    Write-Host "⚠ Windows PowerShell 5.1" -ForegroundColor Yellow
+}
+
 Write-Host "   Configuration: " -NoNewline
 if (Test-Path $ConfigPath) {
-    Write-Host "✓ Ready" -ForegroundColor $green
+    Write-Host "✓ Ready" -ForegroundColor Green
 } else {
-    Write-Host "✗ Missing" -ForegroundColor $red
+    Write-Host "✗ Missing" -ForegroundColor Red
 }
 
 Write-Host "   Prerequisites: " -NoNewline
 if ($npx) {
-    Write-Host "✓ Core tools installed" -ForegroundColor $green
+    Write-Host "✓ Core tools installed" -ForegroundColor Green
 } else {
-    Write-Host "✗ Missing Node.js" -ForegroundColor $red
+    Write-Host "✗ Missing Node.js" -ForegroundColor Red
 }
 
 Write-Host "   bpftrace tool: " -NoNewline
 if ($bpftrace) {
-    Write-Host "✓ Available" -ForegroundColor $green
+    Write-Host "✓ Available" -ForegroundColor Green
 } else {
-    Write-Host "⚠ Optional (not installed)" -ForegroundColor $yellow
+    Write-Host "⚠ Optional (not installed)" -ForegroundColor Yellow
+}
+
+Write-Host "   eBPF Program: " -NoNewline
+if (Test-Path $bpfFile) {
+    Write-Host "✓ Ready" -ForegroundColor Green
+} else {
+    Write-Host "✗ Missing" -ForegroundColor Red
 }
 
 Write-Host ""
-Write-Host "=" -ForegroundColor Gray
+Write-Host "=============================" -ForegroundColor Cyan
 Write-Host ""
 
-# Next steps
 Write-Host "Next Steps:" -ForegroundColor Cyan
 Write-Host "1. Restart Claude Desktop/CLI to load the MCP tools" -ForegroundColor Gray
 Write-Host "2. Verify tools work: kimi mcp list" -ForegroundColor Gray
 Write-Host "3. If bpftrace needed, install from: https://bpftrace.org" -ForegroundColor Gray
 Write-Host ""
-Write-Host "Testing commands:" -ForegroundColor Gray
-Write-Host "   kimi 'Compile the eBPF program in bpf/dwell_monitor.bpf.c'" -ForegroundColor DarkGray
-Write-Host "   kimi 'Verify eBPF bytecode passes kernel safety checks'" -ForegroundColor DarkGray
-Write-Host "   kimi 'Help debug the dwell_tracker map logic'" -ForegroundColor DarkGray
+Write-Host "Testing commands:" -ForegroundColor Cyan
+Write-Host "   kimi 'Compile the eBPF program in bpf/dwell_monitor.bpf.c'" -ForegroundColor Gray
+Write-Host "   kimi 'Verify eBPF bytecode passes kernel safety checks'" -ForegroundColor Gray
+Write-Host "   kimi 'Help debug the dwell_tracker map logic'" -ForegroundColor Gray
+Write-Host ""
+
+if ($PowerShellName -eq "powershell") {
+    Write-Host "Note: You have PowerShell 7+ available on this system." -ForegroundColor Yellow
+    Write-Host "      Consider running these scripts with 'pwsh' for better performance." -ForegroundColor Yellow
+    Write-Host "      Example: pwsh -File .\scripts\setup-mcp-tools.ps1" -ForegroundColor Yellow
+    Write-Host ""
+}
