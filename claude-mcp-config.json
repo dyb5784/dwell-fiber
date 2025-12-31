@@ -1,0 +1,13 @@
+{
+	"mcpServers": {
+		"ebpf-tools": {
+			"command": "sudo",
+			"args": ["npx", "ebpf-dev-tools@latest"],
+			"transport": "stdio"
+		},
+		"bpftrace": {
+			"url": "https://bpftrace-mcp.example.com",
+			"transport": "http"
+		}
+	}
+}

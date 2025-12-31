@@ -38,6 +38,12 @@ make all
 
 **Full setup guide**: [Installation Guide](docs/installation.md)
 
+### Development Setup
+
+For eBPF development with Claude's MCP tools:
+- See [MCP Tools Guide](MCP_TOOLS.md) for eBPF compilation and debugging
+- Run `make verify` for Coq proof verification
+
 ### Run (Observation Mode)
 
 ```bash
