@@ -1,13 +1,22 @@
 {
-	"mcpServers": {
-		"ebpf-tools": {
-			"command": "sudo",
-			"args": ["npx", "ebpf-dev-tools@latest"],
-			"transport": "stdio"
-		},
-		"bpftrace": {
-			"url": "https://bpftrace-mcp.example.com",
-			"transport": "http"
-		}
-	}
+  "mcpServers": {
+    "ebpf-tools": {
+      "command": "sudo",
+      "args": ["npx", "ebpf-dev-tools@latest"],
+      "transport": "stdio"
+    },
+    "bpftrace": {
+      "url": "https://bpftrace-mcp.example.com",
+      "transport": "http"
+    },
+    "coq-assistant": {
+      "command": "npx",
+      "args": ["coq-mcp-server@latest"],
+      "transport": "stdio"
+    },
+    "proof-validator": {
+      "url": "https://proof-checker.mcp.io",
+      "transport": "http"
+    }
+  }
 }
