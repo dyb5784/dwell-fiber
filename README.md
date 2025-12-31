@@ -43,6 +43,7 @@ make all
 For eBPF development with Claude's MCP tools:
 - See [MCP Tools Guide](MCP_TOOLS.md) for eBPF compilation and debugging
 - Run `make verify` for Coq proof verification
+- See [AGENTS.md](AGENTS.md) for AI agent development guide with performance benchmarks, Coq strategies, eBPF debugging, and deployment procedures
 
 ### Run (Observation Mode)
 

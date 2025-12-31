@@ -49,8 +49,10 @@ make test
 - Check with `sparse`
 
 ### Coq
-- Follow [Coq coding guidelines](https://coq.inria.fr/refman/practical-tools/coq-coding-guidelines.html)
+- Follow [Coq coding guidelines](https://coq.inria.fr/refman/practical-tools/coq-coding-guidelines.html) and repository conventions in AGENTS.md
 - Ensure proofs complete in < 1s
+- See AGENTS.md "Coq Proof Strategies That Work Well" for proven tactics and patterns
+- Run `./scripts/coq-verify-enhanced.sh` for comprehensive verification with statistics
 
 ## Pull Request Process
 
@@ -75,16 +77,33 @@ make test
 # Run specific test
 go test ./pkg/... -run TestName
 
-# Benchmark
+# Run eBPF and Coq verification
+make verify
+./scripts/coq-verify-enhanced.sh  # Enhanced verification with stats
+
+# Benchmark with performance thresholds
 make bench
+# See AGENTS.md "Performance Benchmarks to Maintain" for thresholds
 ```
 
 ## Release Process
 
 1. Update version numbers
-2. Run full test suite
-3. Update CHANGELOG.md
-4. Create tagged release
+2. Run full test suite: `make all && make test && make verify`
+3. Verify performance benchmarks (see AGENTS.md)
+4. Update CHANGELOG.md with changes
+5. Update AGENTS.md if adding new features that affect benchmarks or strategies
+6. Create tagged release
+7. For production deployments, follow AGENTS.md "Deployment Procedures for Production Systems"
+
+## AI Agent Development
+
+When working with Claude or other AI agents on this codebase:
+- Reference [AGENTS.md](AGENTS.md) for comprehensive technical guidance
+- Use MCP tools for eBPF and Coq development assistance
+- Follow repository conventions documented in `.claude/instructions.md`
+- Use provided Claude skills in `.claude/skills/` for Coq proof development
+- Reference performance benchmarks and proof strategies from AGENTS.md
 
 ## Code of Conduct
 
